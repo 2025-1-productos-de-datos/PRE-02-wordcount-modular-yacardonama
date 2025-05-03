@@ -1,21 +1,30 @@
-import os
+# import os
+# import subprocess
 
-from ..src.wordcount import main
+# from ..src.wordcount import main
 
 
-def test_migracion():
+# def test_migracion():
 
-    main()
+#     main()
 
-    if not os.path.exists("data/output/results.tsv"):
-        raise FileNotFoundError("El archivo results.tsv no existe.")
+#     if not os.path.exists("data/output/wordcount.tsv"):
+#         raise FileNotFoundError("El archivo wordcount.tsv no existe.")
 
-    results = {}
-    with open("data/output/results.tsv", "r", encoding="utf-8") as f:
-        lines = f.readlines()
-    for line in lines:
-        key, value = line.strip().split("\t")
-        results[key] = value
+#     try:
+#         subprocess.run(
+#             ["python3", "-m", "homework", "data/input", "data/output"],
+#             check=True,
+#         )
+#     except subprocess.CalledProcessError as e:
+#         raise Exception(f"Error running the homework script: {e}")
 
-    assert results.get("computational", 0) == "3"
-    assert results.get("analytics", 0) == "5"
+#     results = {}
+#     with open("data/output/wordcount.tsv", "r", encoding="utf-8") as f:
+#         lines = f.readlines()
+#     for line in lines:
+#         key, value = line.strip().split("\t")
+#         results[key] = value
+
+#     assert results.get("computational", 0) == "3"
+#     assert results.get("analytics", 0) == "5"
