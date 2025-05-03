@@ -11,14 +11,6 @@
 #     if not os.path.exists("data/output/wordcount.tsv"):
 #         raise FileNotFoundError("El archivo wordcount.tsv no existe.")
 
-#     try:
-#         subprocess.run(
-#             ["python3", "-m", "homework", "data/input", "data/output"],
-#             check=True,
-#         )
-#     except subprocess.CalledProcessError as e:
-#         raise Exception(f"Error running the homework script: {e}")
-
 #     results = {}
 #     with open("data/output/wordcount.tsv", "r", encoding="utf-8") as f:
 #         lines = f.readlines()
